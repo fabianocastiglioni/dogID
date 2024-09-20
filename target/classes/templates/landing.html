@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Breed Identifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dog Breed Identifier</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <p>Welcome to the Dog Breed Identifier application. Use this app to identify different breeds of dogs from images. Sign in with your Google account to get started!</p>
+            <a class="button" th:href="@{/oauth2/authorization/google}">Sign in with Google</a>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Dog Breed Identifier. All rights reserved.</p>
+    </footer>
+</body>
+</html>
