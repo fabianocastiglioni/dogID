@@ -14,11 +14,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         logger.debug("Configuring SecurityFilterChain");
+
         http
-            .authorizeHttpRequests(authorizeRequests -> {
+            .cors()
+            .and()
+            //.csrf().disable() // Desabilitando CSRF para simplificar a configuração
+            .authorizeRequests(authorizeRequests -> { // Corrigido de authorizeHttpRequests para authorizeRequests
                 logger.debug("Configuring request authorization");
                 authorizeRequests
-                    .requestMatchers("/", "/login**", "/logout**","/webjars/**").permitAll()
+                    .requestMatchers("/", "/login**", "/logout**", "/webjars/**").permitAll()
                     .anyRequest().authenticated();
                 logger.info("Public access configured for '/', '/login**', '/webjars/**'. All other requests require authentication.");
             })

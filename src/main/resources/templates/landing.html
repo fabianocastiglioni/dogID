@@ -5,45 +5,133 @@
     <title>Dog Breed Identifier</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
         }
-        header, footer {
-            background: #f4f4f4;
-            padding: 10px 0;
-            text-align: center;
+        header {
+            background: #ffcc00;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            padding-left: 20px;
+            color: #333;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: auto;
-            overflow: hidden;
+            text-align: center;
         }
         .button {
-            display: inline-block;
             padding: 10px 20px;
             color: #fff;
             background: #007bff;
-            text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            text-decoration: none;
+            transition: background 0.3s ease;
         }
         .button:hover {
             background: #0056b3;
         }
+        .login-button {
+            margin-right: 20px;
+            font-size: 14px;
+            background: #4285F4;
+        }
+        .login-button:hover {
+            background: #357ae8;
+        }
+        .hero {
+            background-image: url('https://example.com/dogs-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
         .content {
+            padding: 40px 0;
+        }
+        .dog-breeds {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .dog-breeds img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .testimonials {
+            background: #fff;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #ffcc00;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Dog Breed Identifier</h1>
+        <a class="button login-button" th:href="@{/oauth2/authorization/google}">Sign in with Google</a>
     </header>
+
+    <div class="hero">
+        <div>Identify Dog Breeds with Just One Click!</div>
+    </div>
+
     <div class="container">
         <div class="content">
-            <p>Welcome to the Dog Breed Identifier application. Use this app to identify different breeds of dogs from images. Sign in with your Google account to get started!</p>
-            <a class="button" th:href="@{/oauth2/authorization/google}">Sign in with Google</a>
+            <h2>Explore Popular Dog Breeds</h2>
+            <div class="dog-breeds">
+                <img src="https://images.unsplash.com/photo-1527179122541-293c3b972d24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFicmFkb3J8ZW58MHx8MHx8fDA%3D" alt="Labrador Retriever" />
+                <img src="https://images.unsplash.com/photo-1581991495806-0e2d2b182dbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdvbGRlbiUyMHJldHJpZXZlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Golden Retriever" />
+                <img src="https://media.istockphoto.com/id/490849353/pt/foto/caniche-cachorrinho-fofo-branco-macho.webp?a=1&b=1&s=612x612&w=0&k=20&c=w1srj0nEa40MWxyiWaemac5WTtgwINmFNeYGMB4ohzY=" alt="Poodle" />
+                <img src="https://images.unsplash.com/photo-1508807226959-28bb47d71ab0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1bGxkb2d8ZW58MHx8MHx8fDA%3D" alt="Bulldog" />
+            </div>
+
+
+            <div class="testimonials">
+                <h2>What Our Users Say</h2>
+                <div class="testimonial">
+                    <p>"This app is amazing! I was able to identify my dog's breed instantly. Highly recommend!" - <strong>Maria</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"As a dog lover, I love using this app. It’s easy to use and very accurate!" - <strong>John</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"I always wondered what breed my rescue dog was, and this app gave me the answer!" - <strong>Sophia</strong></p>
+                </div>
+            </div>
         </div>
     </div>
+
     <footer>
         <p>© 2024 Dog Breed Identifier. All rights reserved.</p>
     </footer>
